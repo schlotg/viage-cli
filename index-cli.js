@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const path = require('path');
 const jp = require('fs-jetpack');
 const { spawn } = require('child_process');

@@ -2,7 +2,7 @@
 This is a companion project to [Viage](https://github.com/schlotg/viage) that allows you to quickly start Viage projects and create components and services. See the [Viage](https://github.com/schlotg/viage) project fro more details.
 
 ## Installation
-Coming Soon!
+npm install -g viage-cli
 
 ## API
 
