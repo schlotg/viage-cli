@@ -2,7 +2,7 @@
 const path = require('path');
 const jp = require('fs-jetpack');
 const { spawn } = require('child_process');
-
+const colors = require('colors');
 const args = process.argv.slice(2);
 
 const commands = {
@@ -27,10 +27,10 @@ Invalid or missing Parameters:
 Where command can be:
   create - Create a new empty hello world viage project in the current directory. The name is the folder name and the project name and must be lower case, with words sperated by dashes. Example: my-project
 
-  component - Create a new empty component in the current project. The name is the component name and must be and must be lower case, with words sperated by dashes. Example: my-component
+  component - Create a new empty component in the current project. The name is the component name and must be lower case, with words sperated by dashes. Example: my-component
 
-  service - Create  a new empty service in the current project. The name is the service name and must be and must be lower case, with words sperated by dashes. Example: my-service
-` );
+  service - Create  a new empty service in the current project. The name is the service name and must be lower case, with words sperated by dashes. Example: my-service
+`.green);
 }
 
 function toProperName(name) {
