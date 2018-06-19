@@ -1,13 +1,16 @@
-import { createRouter, Component } from 'viage';
+import { Component } from 'viage';
 
 export class App extends Component {
+
+  title = "Hello from Viage";
+
   constructor() {
     super('app');
-    document.querySelector('title').textContent = "Hello From Viage ";
+    document.querySelector('title').textContent = this.title;
 
     this.attach('page', true);
     this.setHTML(`
-      <h1 style="text-align: center">Hello from Viage</h1>
+      <h1 style="text-align: center">${this.title}</h1>
     `);
   }
 }
