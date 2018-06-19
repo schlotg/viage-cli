@@ -6,7 +6,7 @@ const colors = require('colors');
 const args = process.argv.slice(2);
 
 const commands = {
-  "create": args => createProject(args),
+  "app": args => createProject(args),
   "component": args => createComponent(args),
   "service": args => createService(args)
 };
@@ -25,7 +25,7 @@ Invalid or missing Parameters:
 
 
 Where command can be:
-  create - Create a new empty hello world viage project in the current directory. The name is the folder name and the project name and must be lower case, with words sperated by dashes. Example: my-project
+  app - Create a new empty hello world viage project in the current directory. The name is the folder name and the project name and must be lower case, with words sperated by dashes. Example: my-project
 
   component - Create a new empty component in the current project. The name is the component name and must be lower case, with words sperated by dashes. Example: my-component
 

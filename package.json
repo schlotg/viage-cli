@@ -1,8 +1,8 @@
 {
   "name": "viage-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI to quickly create Viage projects",
-  "main": "index.js",
+  "main": "index-cli.js",
   "preferGlobal": true,
   "keywords": [
     "Viage",
