@@ -1,8 +1,9 @@
 {
   "name": "viage-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "CLI to quickly create Viage projects",
   "main": "index-cli.js",
+  "homepage": "https://github.com/schlotg/viage-cli",
   "preferGlobal": true,
   "keywords": [
     "Viage",
@@ -10,6 +11,10 @@
   ],
   "bin": {
     "viage": "./index-cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schlotg/viage-cli"
   },
   "author": "Greg Schlottmann",
   "license": "MIT",
