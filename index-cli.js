@@ -78,7 +78,8 @@ function createProject(args) {
   ['tsconfig.json',
     'webpack.common.js',
     'webpack.dev.js',
-    'webpack.prod.js'].forEach((file) => {
+    'webpack.prod.js',
+    '.gitignore'].forEach((file) => {
     jp.copy(path.join(src, file), path.join(dest, file), { overwrite: true });
   });
 
