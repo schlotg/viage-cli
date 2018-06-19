@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+'use strict';
 const path = require('path');
 const jp = require('fs-jetpack');
 const { spawn } = require('child_process');
@@ -135,14 +136,17 @@ function createService(args) {
   const hyphonatedName = toHyphonatedName(properName);
 
   const code =
-  `import { Service } from 'viage';
+`import { Service } from 'viage';
 
-  export class ${properName} extends Service {
-    constructor() {
-      super();
-    }
+class ${properName}Singleton extends Service {
+  constructor() {
+    super();
   }
-  `;
+}
+const service = new ${properName}Singleton ();
+export const ${properName} = service;
+
+`;
   const fullPath = path.join(process.cwd(), namePath, `${hyphonatedName}.ts`);
   console.log(`Created a Service at: ${fullPath}`);
   jp.write(fullPath, code);
