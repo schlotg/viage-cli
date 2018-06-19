@@ -24,3 +24,11 @@ This creates a new service in current project.
 ``` viage-cli service <name>```
 
 Where ```name``` is the name of the service.
+
+## Troubleshooting
+If installation fails or the cli just isn't working, try moving the package and then re-installing:
+
+```
+npm rm -g viage
+npm install -g viage
+```
