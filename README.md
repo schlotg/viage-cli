@@ -10,7 +10,7 @@ npm install -g viage-cli
 This scaffolds out a new Viage Project in the current directory.
 ``` viage-cli app <name>```
 
-Where ```name``` is name of the project. To alunch the newly created application:
+Where ```name``` is name of the project. To launch the newly created application:
 ``` cd <name> && npm run start ```
 
 ### component
