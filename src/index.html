@@ -5,6 +5,18 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <page>This page is does not support your browser. Please consider using a newer browser</page>
+    <page>
+      <p style="text-align: center" id="viage-loading">Loading....</p>
+    </page>
+    <script>
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const e = document.querySelector('#viage-loading');
+          if (e) {
+            e.textContent = 'This page is not supported by your browser. Please consider using Safari, Firefox, Edge, or Chrome';
+          }
+        }, 1000);
+      });
+    </script>
   </body>
 </html>
