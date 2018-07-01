@@ -67,25 +67,31 @@ function createProject(args) {
   const src = __dirname;
 
   // make our new directory
-  console.log(process.cwd());
-  console.log(`Creating Directory ${dest}...`);
+  console.log(`\n\n\tCreating Directory ${dest}...`.green);
   jp.dir(dest);
 
   // copy all the source files over
-  console.log('Copying Viage Files...');
+  console.log('\n\n\tCopying Viage Files...'.green);
   jp.copy(path.join(__dirname, 'src'), path.join(dest, 'src'), { overwrite: true });
 
   // copy a specific set of files
-  ['tsconfig.json',
+  [
+    'tsconfig.json',
     'webpack.common.js',
     'webpack.dev.js',
     'webpack.prod.js',
-    '.gitignore'].forEach((file) => {
+    'target.gitignore',
+  ].forEach((file) => {
     jp.copy(path.join(src, file), path.join(dest, file), { overwrite: true });
   });
 
+  // rename an files that need renaming
+  [
+    {file: 'target.gitignore', name: '.gitignore'},
+  ].forEach( e => jp.rename(path.join(dest, e.file), e.name));
+
   // write out the package.json
-  console.log('Installing Modules...');
+  console.log('\n\n\tInstalling Modules...'.green);
   const targetPackage = require('./target-package.json');
   targetPackage.name = name;
   targetPackage.description = `${name}, a Viage Project`;
@@ -96,11 +102,11 @@ function createProject(args) {
   child.stdout.on('data', data => console.log(data.toString()));
   child.stderr.on('data', data => console.error(data.toString()));
   child.on('exit', () => {
-    console.log(`Success! Created ${dest}`);
+    console.log(`\n\n\tSuccess! Created ${dest}`.green);
     process.exit(0);
   });
   child.on('error', (err) => {
-    console.error(`Failed! Error: ${err}`);
+    console.error(`\n\n\tFailed! Error: ${err}`.red);
     process.exit(1);
   });
 }
@@ -124,7 +130,7 @@ function createComponent(args) {
   }
   `;
   const fullPath = path.join(process.cwd(), namePath, `${hyphonatedName}.ts`);
-  console.log(`Created a Component at: ${fullPath}`);
+  console.log(`\n\n\tCreated a Component at: ${fullPath}`.green);
   jp.write(fullPath, code);
   process.exit(0);
 }
@@ -148,7 +154,7 @@ export const ${properName} = service;
 
 `;
   const fullPath = path.join(process.cwd(), namePath, `${hyphonatedName}.ts`);
-  console.log(`Created a Service at: ${fullPath}`);
+  console.log(`\n\n\tCreated a Service at: ${fullPath}`.green);
   jp.write(fullPath, code);
   process.exit(0);
 }
