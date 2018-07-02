@@ -80,6 +80,7 @@ function createProject(args) {
     'webpack.common.js',
     'webpack.dev.js',
     'webpack.prod.js',
+    'embed.js',
     'target.gitignore',
   ].forEach((file) => {
     jp.copy(path.join(src, file), path.join(dest, file), { overwrite: true });
