@@ -23,7 +23,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Via',
+      title: 'Viage App',
       template: 'src/index.html'
     })
   ],
