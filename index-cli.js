@@ -5,25 +5,29 @@ const jp = require('fs-jetpack');
 const { spawn } = require('child_process');
 const colors = require('colors');
 const args = process.argv.slice(2);
+const pjson = require('./package.json');
 
 const commands = {
-  "app": args => createProject(args),
-  "component": args => createComponent(args),
-  "service": args => createService(args)
+  "app": { func: args => createProject(args), count: 2 },
+  "component": {func: args => createComponent(args), count: 2 },
+  "service": { func: args => createService(args), count: 2 },
+  "version": { func: args => getVersion(args), count: 1}
 };
 
-const command = args[0] && args[0].toLowerCase();
-if (args.length >= 2 && commands[command]) {
-  commands[command](args);
+const commandStr = args[0] && args[0].toLowerCase();
+const command = commands[commandStr];
+if (command && args.length === command.count) {
+  command.func(args);
 } else {
   console.log(
 `
+Viage CLI Version: ${pjson.version}
+
 Invalid or missing Parameters:
 
-  Usage: viage-cli <command> <name>
+  Usage: viage <command> <name>
 
-  Example: viage-cli create hello-world
-
+  Example: viage app hello-world
 
 Where command can be:
   app - Create a new empty hello world viage project in the current directory. The name is the folder name and the project name and must be lower case, with words sperated by dashes. Example: my-project
@@ -31,6 +35,10 @@ Where command can be:
   component - Create a new empty component in the current project. The name is the component name and must be lower case, with words sperated by dashes. Example: my-component
 
   service - Create  a new empty service in the current project. The name is the service name and must be lower case, with words sperated by dashes. Example: my-service
+
+  version - Return the current version.
+
+To update type: npm install -g viage-cli
 `.green);
 }
 
@@ -158,4 +166,8 @@ export const ${properName} = service;
   console.log(`\n\n\tCreated a Service at: ${fullPath}`.green);
   jp.write(fullPath, code);
   process.exit(0);
+}
+
+function getVersion() {
+  console.log(`\nViage CLI Version ${pjson.version}\n`);
 }
