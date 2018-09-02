@@ -77,6 +77,7 @@ function createProject(args) {
   // make our new directory
   console.log(`\n\n\tCreating Directory ${dest}...`.green);
   jp.dir(dest);
+  jp.dir(path.join(dest, 'tests'));
 
   // copy all the source files over
   console.log('\n\n\tCopying Viage Files...'.green);
