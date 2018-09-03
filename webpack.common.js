@@ -24,7 +24,8 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: 'Viage App',
-      template: 'src/index.html'
+      template: 'src/index.html',
+      favicon: 'src/favicon.png'
     })
   ],
   output: {

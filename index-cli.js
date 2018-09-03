@@ -91,6 +91,7 @@ function createProject(args) {
     'webpack.prod.js',
     'embed.js',
     'target.gitignore',
+    'server.js'
   ].forEach((file) => {
     jp.copy(path.join(src, file), path.join(dest, file), { overwrite: true });
   });
