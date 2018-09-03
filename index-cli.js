@@ -134,6 +134,8 @@ function createComponent(args) {
   export class ${properName} extends Component {
     constructor() {
       super('${hyphonatedName}');
+    }
+    init() {
       this.setHTML(\`
         <h1 style="text-align: center">Component ${properName} works</h1>
       \`);
