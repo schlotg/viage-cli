@@ -1,6 +1,6 @@
 {
   "name": "viage-cli",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Viage CLI to quickly create Viage projects",
   "main": "index-cli.js",
   "homepage": "https://github.com/schlotg/viage-cli",
