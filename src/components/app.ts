@@ -13,5 +13,6 @@ export class App extends Component {
     this.setHTML(`
       <h1 style="text-align: center">${this.title}</h1>
     `);
+    return this;
   }
 }

@@ -139,6 +139,7 @@ function createComponent(args) {
       this.setHTML(\`
         <h1 style="text-align: center">Component ${properName} works</h1>
       \`);
+      return this;
     }
   }
   `;
