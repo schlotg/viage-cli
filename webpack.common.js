@@ -7,13 +7,17 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.tsx?$/i,
         use: 'ts-loader',
         exclude: /node_modules/
       },
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [ 'style-loader', 'css-loader' ]
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/i,
+        use: [ { loader: 'url-loader', options: { limit: 16384 } } ]
       }
     ]
   },
