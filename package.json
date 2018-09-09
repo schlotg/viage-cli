@@ -1,10 +1,13 @@
 {
   "name": "viage-cli",
-  "version": "1.3.0",
+  "version": "1.3.9",
   "description": "Viage CLI to quickly create Viage projects",
   "main": "index-cli.js",
   "homepage": "https://github.com/schlotg/viage-cli",
   "preferGlobal": true,
+  "scripts": {
+    "pub": "npm publish"
+  },
   "keywords": [
     "Viage",
     "CLI"
