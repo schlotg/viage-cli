@@ -1,5 +1,5 @@
 # Welcome to Viage CLI
-This is a companion project to [Viage](https://github.com/schlotg/viage) that allows you to quickly start Viage projects and create components and services. See the [Viage](https://github.com/schlotg/viage) project for more details.
+This is a companion project to [Viage](https://github.com/schlotg/viage) that allows you to quickly start Viage projects and create components and services. See the [Viage Website](https://schlotg.github.io/) for more details.
 
 ## Installation
 npm install -g viage-cli
