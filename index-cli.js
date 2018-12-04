@@ -69,6 +69,16 @@ function toHyphonatedName(name) {
   return result;
 }
 
+function makeFirstCharLower (name) {
+  if (name && name.length) {
+    let result = '' + name.charAt(0).toLowerCase();
+    result += name.slice(1);
+    return result;
+  } else {
+    return name;
+  }
+}
+
 function createProject(args) {
   const name = args[1];
   const dest = path.join(process.cwd(), name);
@@ -129,20 +139,20 @@ function createComponent(args) {
   const hyphonatedName = toHyphonatedName(properName);
 
   const code =
-  `import { Component } from 'viage';
+`import { Component } from 'viage';
 
-  export class ${properName} extends Component {
-    constructor() {
-      super('${hyphonatedName}');
-    }
-    init() {
-      this.setHTML(\`
-        <h1 style="text-align: center">Component ${properName} works</h1>
-      \`);
-      return this;
-    }
+export class ${properName} extends Component {
+  constructor() {
+    super('${hyphonatedName}');
   }
-  `;
+  init() {
+    this.setHTML(\`
+      <h1 style="text-align: center">Component ${properName} works</h1>
+    \`);
+    return this;
+  }
+}
+`;
   const fullPath = path.join(process.cwd(), namePath, `${hyphonatedName}.ts`);
   console.log(`\n\n\tCreated a Component at: ${fullPath}`.green);
   jp.write(fullPath, code);
@@ -158,14 +168,12 @@ function createService(args) {
   const code =
 `import { Service } from 'viage';
 
-class ${properName}Singleton extends Service {
+export class ${properName} extends Service {
   constructor() {
     super();
   }
 }
-const service = new ${properName}Singleton ();
-export const ${properName} = service;
-
+export const ${makeFirstCharLower(properName)} = new ${properName} ();
 `;
   const fullPath = path.join(process.cwd(), namePath, `${hyphonatedName}.ts`);
   console.log(`\n\n\tCreated a Service at: ${fullPath}`.green);
