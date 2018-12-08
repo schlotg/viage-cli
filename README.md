@@ -57,4 +57,4 @@ Launches ts-jest and runs all the tests in the tests directory
 Launches a nodejs server that serves all the files from the dist folder. This allows you to run the app as its built for release from the dist directory.
 
 ## How to Viage
-For more information on how to Viage, go to the [Viage page](https://github.com/schlotg/viage) or the [Viage Shopping List Tutorial](https://github.com/schlotg/viage-shopping-list)
+For more information on how to Viage, go to the [Viage page](https://github.com/schlotg/viage) or the [Viage Shopping List Tutorial](https://schlotg.github.io/#/tutorial_introduction)
