@@ -2,7 +2,7 @@ import { Component } from 'viage';
 
 export class App extends Component {
 
-  title = "Hello from Viage";
+  private title = "Hello from Viage";
 
   constructor() {
     super('app');
