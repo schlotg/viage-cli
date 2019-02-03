@@ -25,10 +25,10 @@
     "ts-loader": "^5.3.1",
     "typescript": "^3.2.2",
     "url-loader": "^1.1.2",
-    "viage": "^1.3.14",
+    "viage": "^1.4.0",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.10",
+    "webpack-dev-server": "^3.1.14",
     "webpack-merge": "^4.1.4"
   },
   "jest": {
