@@ -8,9 +8,12 @@
     "allowJs": true,
     "experimentalDecorators": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "node"
   },
-  "include": [ "src/**/*" ],
+  "include": [
+    "src/**/*",
+    "node_modules/viage/src/**/*"
+  ],
   "typeRoots": [
     "node_modules/@types",
     "./src/types.d.ts"
@@ -19,5 +22,4 @@
     "es2017",
     "dom"
   ]
-
 }
