@@ -1,6 +1,6 @@
 {
   "name": "viage-cli",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "description": "Viage CLI to quickly create Viage projects",
   "main": "index-cli.js",
   "homepage": "https://github.com/schlotg/viage-cli",
@@ -22,7 +22,7 @@
   "author": "Greg Schlottmann",
   "license": "MIT",
   "dependencies": {
-    "fs-jetpack": "^1.3.1",
-    "colors": "^1.3.3"
+    "fs-jetpack": "1.3.1",
+    "colors": "1.3.3"
   }
 }
