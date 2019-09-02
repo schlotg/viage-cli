@@ -27,7 +27,7 @@
     "ts-loader": "5.4.4",
     "typescript": "3.4.5",
     "url-loader": "1.1.2",
-    "viage": "1.4.8",
+    "viage": "1.4.9",
     "webpack": "4.28.2",
     "webpack-cli": "3.3.1",
     "webpack-dev-server": "3.3.1",
